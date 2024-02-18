@@ -1,6 +1,6 @@
 # Echo Chat
 
-#### (Development in Progress)
+#### (Development In Progress)
 
 Echo Chat is a cross-platform chat application developed with the Electron JS framework and powered by React. This lightweight and user-friendly chat app provides a seamless messaging experience, combining the flexibility of Electron for desktop deployment with the interactive UI capabilities of React.
 
@@ -13,5 +13,4 @@ Echo Chat is a cross-platform chat application developed with the Electron JS fr
 
 Feel free to contribute, clone, report issues, or suggest improvements.
 
-Andrei,
 Happy Hacking!
