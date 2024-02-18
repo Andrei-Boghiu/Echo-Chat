@@ -20,8 +20,8 @@ const isDev = !app.isPackaged;
 
 function createMainWindow() {
 	const window = new BrowserWindow({
-		width: isDev ? 1400 : 800, // for devTools
-		height: 600,
+		width: isDev ? 1400 : 1200, // for devTools
+		height: 800,
 		backgroundColor: "#1f1f1f",
 		webPreferences: {
 			preload: path.join(__dirname, "preload.js"),

@@ -1,8 +1,12 @@
 import React from "react";
-import Home from "./views/Home";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
+import Home from "./views/Home";
 import Navbar from "./components/Navbar";
+import Login from "./views/Login";
+import Register from "./views/Register";
+import Settings from "./views/Settings";
+import Chat from "./views/Chat";
 
 export default function App() {
 	return (
@@ -12,22 +16,28 @@ export default function App() {
 			<div className="content-wrapper">
 				<Routes>
 					<Route
+						path="/chat/:id"
+						element={<Chat />}
+					></Route>
+
+					<Route
 						path="/settings"
-						element={<h1>Settings</h1>}
+						element={<Settings />}
 					></Route>
 
 					<Route
 						path="/login"
-						element={<h1>Login</h1>}
+						element={<Login />}
 					></Route>
 
 					<Route
 						path="/register"
-						element={<h1>register</h1>}
+						element={<Register />}
 					></Route>
 
 					<Route
 						path="/"
+						exact
 						element={<Home />}
 					></Route>
 				</Routes>

@@ -1,15 +1,9 @@
 import React from "react";
 
-export default function Title() {
+export default function Title({ titleText }) {
 	return (
 		<div className="chat-name-container">
-			<span className="name">Overview</span>
-			<a
-				href="/"
-				className="btn btn-primary btn-sm back-button"
-			>
-				Back
-			</a>
+			<span className="name">{titleText}</span>
 		</div>
 	);
 }
