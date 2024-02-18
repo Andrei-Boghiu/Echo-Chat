@@ -1,5 +1,48 @@
-
+# Dependency directories
 /node_modules
 /build
-/src/js/db/firestore.js
 
+# Environment variables
+.env
+.env.test
+
+# Visual Studio Code specific files
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log 
+npm-debug.log*
+
+# Package files
+*.7z
+*.dmg
+*.iso
+*.rar
+*.zip
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Compiled binary extensions
+*.dll
+*.so
+*.dylib
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Credentials
+*.key
+*.pem
+
+# TypeScript
+*.tsbuildinfo

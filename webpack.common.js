@@ -1,10 +1,12 @@
 const path = require("path");
+const webpack = require("webpack");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
 	mode: "development",
 	entry: "./src/js/index.js",
 	devtool: "inline-source-map",
-	target: "electron-renderer",
+	target: "web",
 	module: {
 		rules: [
 			{
@@ -40,7 +42,12 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [],
+	plugins: [
+		new webpack.ProvidePlugin({
+			firebase: "firebase/app",
+		}),
+		new Dotenv(),
+	],
 	resolve: {
 		extensions: [".js"],
 	},
