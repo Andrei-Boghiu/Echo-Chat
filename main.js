@@ -1,18 +1,3 @@
-// TO DO LIST:
-// * Make the notification api more customizable, check the Electron documentation on Notification API
-// * Also make Voice Calls, then Video Calls, and finally Share Screen.
-//
-// * After figuring out all the functions that I need and wrote them as I want, add verification on parameters and other data to ensure that
-// the right data is being passed. Ex: if(typeOf message !== 'object') throw new Error("Invalid Parameter: 'don't give to many info about the error here so that a hacker won't be able to debug the error' ")
-
-// FOR NEXT PROJECT
-// * Make two chat bots to talk with each other
-// * One should be more optimistic, the other more pessimistic.
-// * The user can give them a subject to start a discussion between the two chat bots
-// * Sit back and watch them argue.
-// * BONUS: Add text to speak feature.
-// * UI: inspiration from Telegram
-
 const { app, BrowserWindow, ipcMain, Notification } = require("electron");
 const path = require("path");
 

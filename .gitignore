@@ -2,6 +2,9 @@
 /node_modules
 /build
 
+# My TO DO List
+to-do.txt
+
 # Environment variables
 .env
 .env.test
