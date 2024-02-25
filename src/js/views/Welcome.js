@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
+import Loader from "../components/shared/Loader";
 
 export default function Welcome() {
 	const [loginView, setLoginView] = useState(true);
@@ -19,7 +20,7 @@ export default function Welcome() {
 	}, [isChecking, user, navigate]);
 
 	if (isChecking) {
-		return <h1>Loading...</h1>;
+		return <Loader message="Loading..." />;
 	}
 
 	return (
