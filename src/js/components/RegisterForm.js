@@ -39,7 +39,7 @@ export default function RegisterForm() {
 				<div className="form-group">
 					<label htmlFor="username">Username</label>
 					<input
-						// {...register("username", { required: true })}
+						{...register("username", { required: true })}
 						type="text"
 						name="username"
 						className="form-control"
@@ -50,7 +50,7 @@ export default function RegisterForm() {
 				<div className="form-group">
 					<label htmlFor="avatar">Avatar</label>
 					<input
-						// {...register("avatar", { required: true })}
+						{...register("avatar", { required: true })}
 						type="text"
 						name="avatar"
 						className="form-control"
