@@ -6,6 +6,9 @@ export const registerUser = (formData) => (dispatch) =>
 		return user;
 	});
 
+export const loginUser = (formCredentials) => (dispatch) =>
+	api.login(formCredentials).then((_) => dispatch({ type: "AUTH_LOGIN_SUCCESS" }));
+
 export const logout = () => (dispatch) => api.logout().then((_) => dispatch({ type: "AUTH_LOGOUT_SUCCESS" }));
 
 export const listenToAuthChanges = () => (dispatch) => {

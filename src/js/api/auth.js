@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -38,8 +38,8 @@ export async function register({ email, password, username, avatar }) {
 	}
 }
 
+export const login = ({ email, password }) => signInWithEmailAndPassword(auth, email, password);
+
 export const logout = () => auth.signOut();
 
-export function onAuthStateChange(onAuth) {
-	return auth.onAuthStateChanged(onAuth);
-}
+export const onAuthStateChange = (onAuth) => auth.onAuthStateChanged(onAuth);
