@@ -1,21 +1,12 @@
 import { db } from "../firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 
-export const fetchChats = () => {
-	return getDocs(collection(db, "chats")).then((snapshot) =>
-		snapshot.docs.map((doc) => {
-			return { id: doc.id, ...doc.data() };
-		})
-	);
+export const fetchChats = async () => {
+	try {
+		const snapshot = await getDocs(collection(db, "chats"));
+		return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+	} catch (error) {
+		console.error("Error fetching chats:", error);
+		throw error;
+	}
 };
-
-// export const fetchChats = () => {
-// 	return db
-// 		.collection("chats")
-// 		.get()
-// 		.then((snapshot) =>
-// 			snapshot.docs.map((doc) => {
-// 				return { id: doc.id, ...doc.data() };
-// 			})
-// 		);
-// };

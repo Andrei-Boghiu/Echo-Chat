@@ -22,11 +22,10 @@ export async function register({ email, password, username, avatar }) {
 	try {
 		const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-		console.log(userCredential);
+		//console.log(userCredential);
 		console.log("User registered:", userCredential.user.email);
-
+		console.log("Creating profile...");
 		const profile = { uid: userCredential.user.uid, username, email, avatar, joinedChats: [] };
-		console.log(profile);
 
 		await createUserProfile(profile);
 
@@ -37,4 +36,8 @@ export async function register({ email, password, username, avatar }) {
 		console.error(`Registration Failed: ${error}`);
 		return Promise.reject(error);
 	}
+}
+
+export function onAuthStateChange(onAuth) {
+	return auth.onAuthStateChanged(onAuth);
 }

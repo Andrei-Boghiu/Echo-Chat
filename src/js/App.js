@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Provider } from "react-redux";
@@ -10,10 +10,15 @@ import Settings from "./views/Settings";
 import Chat from "./views/Chat";
 
 import configStore from "./store";
+import { listenToAuthChanges } from "./actions/auth";
 
 const store = configStore();
 
 export default function App() {
+	useEffect(() => {
+		store.dispatch(listenToAuthChanges());
+	}, []);
+
 	return (
 		<Provider store={store}>
 			<HashRouter>
