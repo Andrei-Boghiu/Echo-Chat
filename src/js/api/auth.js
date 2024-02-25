@@ -38,6 +38,8 @@ export async function register({ email, password, username, avatar }) {
 	}
 }
 
+export const logout = () => auth.signOut();
+
 export function onAuthStateChange(onAuth) {
 	return auth.onAuthStateChanged(onAuth);
 }
